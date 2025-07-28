@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+iimport fetch from 'node-fetch';
 
 export default async function handler(req, res) {
   const { q } = req.query;
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
       image: product.thumbnail,
       productUrl: 'https://dummyjson.com/products/' + product.id
     }));
-    res.status(200).json({ items });
+    res.status(200).json({ items, results: items });
   } catch (error) {
     console.error('Error fetching products:', error);
     res.status(500).json({ error: 'Failed to fetch search results' });
